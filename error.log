@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/azureuser/scripts/get_selenium.py", line 1, in <module>
+    from selenium import webdriver
+ModuleNotFoundError: No module named 'selenium'
+Traceback (most recent call last):
+  File "/home/azureuser/scripts/get_selenium.py", line 1, in <module>
+    from selenium import webdriver
+ModuleNotFoundError: No module named 'selenium'
