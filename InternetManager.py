@@ -1,6 +1,5 @@
 import aiohttp
 import asyncio
-import json
 from ApiDataManager import ApiDataManager
 
 class InternetManager:
