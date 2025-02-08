@@ -16,6 +16,8 @@ log_file = "../output.log"
 sys.stdout = open(log_file, "w")
 sys.stderr = open(log_file, "w")
 
+print("Initialized")
+
 def initialize_selenium_driver():
     options = Options()
     options.binary_location = "/usr/bin/google-chrome"
