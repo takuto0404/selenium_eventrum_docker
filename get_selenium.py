@@ -12,7 +12,7 @@ import os
 import asyncio
 import json
 
-log_file = "/home/azureuser/scripts/output.log"
+log_file = "../output.log"
 sys.stdout = open(log_file, "w")
 sys.stderr = open(log_file, "w")
 
