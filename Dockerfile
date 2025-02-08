@@ -6,7 +6,6 @@ COPY requirements.txt ./
 
 COPY . .
 
-
 RUN apt-get update && apt-get install -y \
     google-chrome-stable \
     wget unzip && \
