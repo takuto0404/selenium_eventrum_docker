@@ -12,11 +12,6 @@ import os
 import asyncio
 import json
 
-log_file = "../output.log"
-sys.stdout = open(log_file, "w")
-sys.stderr = open(log_file, "w")
-
-
 def initialize_selenium_driver():
     options = Options()
     options.binary_location = "/usr/bin/google-chrome"
@@ -68,7 +63,6 @@ async def process_genre(driver, genre_type):
     news_dict = json.loads(news_json)
     articles = news_dict.get('articles', [])
 
-    print("OK")
     last_time_updated = get_lastTimeUpdated()
     
     filtered_articles = [
@@ -86,7 +80,6 @@ async def process_genre(driver, genre_type):
 
 # async def main():
 async def main():
-    print("Initialized")
     driver = initialize_selenium_driver()
     try:
         genre_list = ["Top", "Business", "Entertainment", "Health", "Science", "Sports", "Technology"]
