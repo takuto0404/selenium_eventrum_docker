@@ -5,3 +5,9 @@ WORKDIR /app
 COPY requirements.txt ./
 
 COPY . .
+
+
+RUN apt-get update && apt-get install -y \
+    google-chrome-stable \
+    wget unzip && \
+    rm -rf /var/lib/apt/lists/*

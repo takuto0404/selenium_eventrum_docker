@@ -18,6 +18,8 @@ def initialize_selenium_driver():
     options.add_argument("--headless")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--disable-gpu")
+    options.add_argument("--no-sandbox")
+
 
     os.environ["WDM_LOCAL"] = "1"
     os.environ["WDM_CACHE_DIR"] = "/tmp"
