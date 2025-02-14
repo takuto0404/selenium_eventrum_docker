@@ -107,17 +107,17 @@ from selenium import webdriver
 options = webdriver.ChromeOptions()
 options.add_argument('--headless')  # ヘッドレスモード（画面表示なし）で動作
 
-# Selenium Server に接続する
-driver = webdriver.Remote(
-    command_executor='http://localhost:4444/wd/hub',  # コンテナの Selenium Hub に接続
-    options=options,  # options を渡す
-)
+# # Selenium Server に接続する
+# driver = webdriver.Remote(
+#     command_executor='http://localhost:4444/wd/hub',  # コンテナの Selenium Hub に接続
+#     options=options,  # options を渡す
+# )
 
 # Selenium 経由でブラウザを操作する
-driver.get('https://qiita.com')
-print(driver.current_url)
-
-# ブラウザを終了する
-driver.quit()
+# driver.get('https://qiita.com')
+# print(driver.current_url)
+#
+# # ブラウザを終了する
+# driver.quit()
 
 
