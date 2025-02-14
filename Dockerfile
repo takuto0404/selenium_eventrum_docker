@@ -1,40 +1,20 @@
-# ベースイメージとしてSeleniumのChromiumを使用
-FROM selenium/standalone-chromium:latest
+FROM seleniarm/standalone-chromium:latest
 
-# rootユーザーに切り替える
+WORKDIR /app
+
 USER root
+RUN apt update && apt install -y python3 python3-pip python3-venv && rm -rf /var/lib/apt/lists/*
 
-# Pythonの仮想環境用ツールをインストール
-RUN apt-get update && apt-get install -y python3-venv
+RUN python3 -m venv /venv
 
-# 仮想環境を作成
-RUN python3 -m venv /usr/src/app/venv
+RUN /venv/bin/pip install --upgrade pip
 
-# 仮想環境を有効化してpipをインストール
-RUN /usr/src/app/venv/bin/pip install --upgrade pip
+COPY requirements.txt /app/requirements.txt
 
-# Seleniumをインストール
-RUN /usr/src/app/venv/bin/pip install selenium
+RUN /venv/bin/pip install -r /app/requirements.txt
 
-# Chromium用のWebDriverをダウンロード（必要に応じてバージョン指定）
-RUN wget https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip -P /tmp \
-    && unzip /tmp/chromedriver_linux64.zip -d /usr/local/bin \
-    && rm /tmp/chromedriver_linux64.zip \
-    # 必要な依存関係をインストール
-RUN apt-get update && apt-get install -y wget gnupg
+USER selenium
 
-# Googleのキーとリポジトリを追加
-RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add - \
-    && sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list'
+EXPOSE 4444
 
-# Chromeをインストール
-RUN apt-get update && apt-get install -y google-chrome-stable
-
-# 自作のPythonファイルをコンテナ内にコピー
-COPY . /usr/src/app/
-
-# 作業ディレクトリを設定
-WORKDIR /usr/src/app
-
-# コンテナ起動時にPythonファイルを実行
-CMD ["python3", "get_selenium.py"]
+CMD ["/venv/bin/python", "app/get_selenium.py"]

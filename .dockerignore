@@ -1,0 +1,18 @@
+# Python関連
+__pycache__/
+*.pyc
+*.pyo
+
+# Git関連
+.git/
+.gitignore
+
+jsonSample.json
+
+# ログファイル
+*.log
+
+# その他
+*.env
+config.json
+node_modules/
