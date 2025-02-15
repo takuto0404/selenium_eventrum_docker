@@ -13,3 +13,6 @@ typing_extensions==4.12.2
 urllib3==2.3.0
 websocket-client==1.8.0
 wsproto==1.2.0
+
+requests~=2.32.3
+aiohttp~=3.11.12
