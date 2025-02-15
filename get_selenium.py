@@ -10,10 +10,12 @@ import json
 def initialize_selenium_driver():
     options = webdriver.ChromeOptions()
     options.add_argument("--headless")
+    print("b")
     driver = webdriver.Remote(
         command_executor='https://standalone-chromium-latest-gr3h.onrender.com/wd/hub',  # コンテナの Selenium Hub に接続
         options=options,  # options を渡す
     )
+    print("c")
     return driver
 
 async def fetch_news_data(genre_type):
@@ -69,6 +71,7 @@ async def process_genre(driver, genre_type):
 
 # async def main():
 async def main():
+    print("a")
     driver = initialize_selenium_driver()
     try:
         genre_list = ["Top", "Business", "Entertainment", "Health", "Science", "Sports", "Technology"]
