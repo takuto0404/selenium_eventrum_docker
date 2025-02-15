@@ -9,7 +9,7 @@ class ApiClient:
     async def add_articles(cls, genre, results):
         # tasks = [cls.add_article(genre, result) for result in results]
         datas = [cls.toJson(result) for result in results]
-        BASE_URL = f"http://127.0.0.1:{os.getenv("PORT")}"
+        BASE_URL = f"http://127.0.0.1:{os.getenv('PORT')}"
         try:
             response = await requests.post(f"{BASE_URL}/articles/{genre}", json=datas)
             if response.status_code == 200:
