@@ -9,15 +9,15 @@ class ApiClient:
     async def add_articles(cls, genre, results):
         # tasks = [cls.add_article(genre, result) for result in results]
         datas = [cls.toJson(result) for result in results]
-        BASE_URL = f"http://127.0.0.1:{os.getenv('PORT')}"
-        try:
-            response = await requests.post(f"{BASE_URL}/articles/{genre}", json=datas)
-            if response.status_code == 200:
-                print("Article added successfully:", response.json())
-            else:
-                print(f"Failed to add article. Status code: {response.status_code}")
-        except requests.RequestException as e:
-            print(f"Error connecting to API: {e}")
+        # BASE_URL = f"http://127.0.0.1:{os.getenv('PORT')}"
+        # try:
+        #     response = await requests.post(f"{BASE_URL}/articles/{genre}", json=datas)
+        #     if response.status_code == 200:
+        #         print("Article added successfully:", response.json())
+        #     else:
+        #         print(f"Failed to add article. Status code: {response.status_code}")
+        # except requests.RequestException as e:
+        #     print(f"Error connecting to API: {e}")
 
         
     @classmethod
