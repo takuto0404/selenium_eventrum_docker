@@ -16,5 +16,3 @@ RUN /venv/bin/pip install -r /app/requirements.txt
 USER selenium
 
 EXPOSE 4444
-
-CMD ["/venv/bin/python", "app/get_selenium.py"]
