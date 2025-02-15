@@ -1,7 +1,9 @@
+import os
+
 import requests
 
 class ApiClient:
-    BASE_URL = "http://127.0.0.1:8080"
+    BASE_URL = f"http://127.0.0.1:{os.getenv("PORT")}"
 
     # データ追加（POSTリクエスト）未使用
     @classmethod
