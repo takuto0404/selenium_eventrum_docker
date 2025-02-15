@@ -42,9 +42,9 @@ def get_lastTimeUpdated():
     dateTimeString = f.read()
     return datetime.fromisoformat(dateTimeString.replace("Z", "+00:00"))
 
-def update_lastTimeUpdated(datetime):
+def update_lastTimeUpdated(time):
     f = open('lastTimeUpdated.txt', 'w')
-    f.write(datetime)
+    f.write(time)
 
 
 async def process_genre(driver, genre_type):
