@@ -69,7 +69,8 @@ async def process_genre(driver, genre_type):
 
 # async def main():
 async def main():
-    driver = initialize_selenium_driver()
+    print("a")
+    # driver = initialize_selenium_driver()
     # try:
     #     genre_list = ["Top", "Business", "Entertainment", "Health", "Science", "Sports", "Technology"]
     #     result_dict = {}
