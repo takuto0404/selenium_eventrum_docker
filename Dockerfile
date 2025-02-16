@@ -1,8 +1,9 @@
-FROM seleniarm/standalone-chromium:latest
+FROM python:3
+
+USER root
 
 WORKDIR /app
 
-USER root
 RUN apt update && apt install -y python3 python3-pip python3-venv && rm -rf /var/lib/apt/lists/*
 
 RUN python3 -m venv /venv
