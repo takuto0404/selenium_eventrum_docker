@@ -70,23 +70,22 @@ async def process_genre(driver, genre_type):
 # async def main():
 async def main():
     driver = initialize_selenium_driver()
-    try:
-        genre_list = ["Top", "Business", "Entertainment", "Health", "Science", "Sports", "Technology"]
-        result_dict = {}
-
-        tasks = process_genre(driver, "Top")
-        await asyncio.gather(tasks)
-        # tasks = [process_genre(driver, genre) for genre in genre_list]
-        # await asyncio.gather(*tasks)
-
-    except Exception as e:
-        print(f"An error occurred: {e}")
-
-    finally:
-        driver.quit()
+    # try:
+    #     genre_list = ["Top", "Business", "Entertainment", "Health", "Science", "Sports", "Technology"]
+    #     result_dict = {}
+    #
+    #     tasks = process_genre(driver, "Top")
+    #     await asyncio.gather(tasks)
+    #     # tasks = [process_genre(driver, genre) for genre in genre_list]
+    #     # await asyncio.gather(*tasks)
+    #
+    # except Exception as e:
+    #     print(f"An error occurred: {e}")
+    #
+    # finally:
+    #     driver.quit()
 
 if __name__ == "__main__":
-    print("a")
     asyncio.run(main())
 
 
