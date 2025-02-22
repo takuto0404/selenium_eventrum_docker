@@ -3,7 +3,6 @@ USER root
 
 WORKDIR /app
 
-RUN du
 RUN apt-get update && \
     apt-get install -y python3-venv && \
     rm -rf /var/lib/apt/lists/*
@@ -14,3 +13,4 @@ RUN python3 -m venv /venv && \
 COPY requirements.txt /app/requirements.txt
 
 RUN /venv/bin/pip install -r /app/requirements.txt
+RUN du
