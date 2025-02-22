@@ -1,1 +1,1 @@
-FROM python:3.12-slim
+FROM golang:1.19-alpine3.15 AS go
