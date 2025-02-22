@@ -13,7 +13,3 @@ RUN python3 -m venv /venv && \
 COPY requirements.txt /app/requirements.txt
 
 RUN /venv/bin/pip install -r /app/requirements.txt
-
-EXPOSE 4444
-
-RUN uname -a
